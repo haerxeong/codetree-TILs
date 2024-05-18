@@ -1,10 +1,9 @@
 cnt = 1
 ans = []
-f = 1
 
 n = int(input())
 x = int(input())
-f = f // abs(f)
+f = x // abs(x)
 
 for _ in range(1, n):
     x = int(input())
@@ -13,5 +12,7 @@ for _ in range(1, n):
         f *= -1
         ans.append(cnt)
         cnt = 1
+
+ans.append(cnt)
 
 print(max(ans))
