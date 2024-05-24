@@ -1,3 +1,4 @@
-s = input()
+string = input()
 n = int(input())
-print(s[:len(s)-n-1:-1])
+l = len(string)
+print(s[:l-n-1:-1] if n < l else string[::-1])
