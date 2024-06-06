@@ -5,7 +5,7 @@ using namespace std;
 
 class Queue {
 private:
-    int q[5];
+    int q[10];
     int front, rear;
 
 public:
@@ -20,33 +20,23 @@ public:
 Queue::Queue() : q{}, front(-1), rear(-1) {}
 
 void Queue::push(int a) {
-    if (empty()) {
-        front = 0;
-    }
     q[++rear] = a;
 }
 
 int Queue::pop() {
-    int value = q[front];
-    if (front == rear) {
-        front = rear = -1; // Reset queue if it becomes empty
-    } else {
-        front++;
-    }
-    return value;
+    return q[++front];
 }
 
 int Queue::size() {
-    if (empty()) return 0;
-    return rear - front + 1;
+    return rear - front;
 }
 
 bool Queue::empty() {
-    return front == -1;
+    return front == rear;
 }
 
 int Queue::_front() {
-    return q[front];
+    return q[front + 1];
 }
 
 int main() {
