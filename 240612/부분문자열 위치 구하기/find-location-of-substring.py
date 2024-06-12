@@ -1,8 +1,7 @@
 input_string = input()
 target = input()
-ans = 0
 
-for i in range(len(input_string) - len(target)):
+for i in range(len(input_string) - len(target) + 1):
     if input_string[i:i+len(target)] == target:
         ans = i
         break
